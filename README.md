@@ -16,16 +16,16 @@ This project uses a tech stack consisting of React, Vite, CSS, MongoDB, AWS, and
 
 ### Clone the Repository
 ```bash
-git clone [repository-url]
+git clone git@github.com:boundy99/Ndeyskitchen-Admin.git
 ```
-### Go to the server folder then
+### cd into the server folder then
 ```bash
 npm install
 #then 
 npm run dev
 ```
 
-### Go to the client folder then
+### cd into the client folder then
 ```bash
 npm install
 #then 
