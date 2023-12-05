@@ -1,2 +1,5 @@
-/server/node_modules/
+server/node_modules/
+/client/node_modules/
 .env
+.env.development.local
+.env.production.local
