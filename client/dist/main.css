@@ -1,0 +1,11 @@
+.login-header {
+  color: #DC952F;
+}
+
+body, html {
+  max-width: 100%;
+  overflow-x: clip;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  scroll-behavior: smooth;
+}
