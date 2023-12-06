@@ -20,7 +20,7 @@ export default {
       },
 
       borderRadius: {
-        rd: '3px',
+        rd: '5px',
       },
     },
   },
