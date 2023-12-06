@@ -2,12 +2,12 @@ import { React, useEffect } from 'react';
 
 export default function Login() {
   return (
-    <div>
+    <div className="login-container">
       <img src="../images/ndeys-kitchen.png" />
 
       <form>
         <header>
-          <h1>Login</h1>
+          <h1 className="login-header">Login</h1>
         </header>
 
         <label htmlFor="username">Username</label>
