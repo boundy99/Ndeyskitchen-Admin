@@ -5,7 +5,7 @@ This project uses a tech stack consisting of React, Vite, CSS, MongoDB, AWS, and
 ## Tools
 - React
 - Vite
-- CSS
+- Sass
 - MongoDB
 - AWS
 - Nginx
