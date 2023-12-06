@@ -1,3 +1,143 @@
+$form-gap: 15px
+$form-gap-multiple: 1.2
 
-.login-header
-    color: $secondary-color
+.login-container
+    @include flexColumn
+    height: 100dvh
+    justify-content: center
+    align-items: center
+
+    img
+        width: 130px
+
+    form
+        @include flexColumn
+        justify-content: center
+        align-items: center
+        gap: $form-gap
+        padding: 30px 65px
+        border: 1px solid $black
+        border-radius: $radius
+
+        header
+            color: $primary
+            font-family: Satisfy
+            margin-bottom: loginGap($form-gap, $form-gap-multiple)
+
+            h1
+                font-size: 55px
+
+        label
+            color: $primary
+
+        input
+            width: 240px
+            height: 45px
+            text-align: center
+            border: 1px solid $black
+            border-radius: $radius
+
+            &:focus
+                outline-color: $black
+
+    button
+        background-color: $primary
+        color: $white
+        font-size: 20px
+        margin-top: loginGap($form-gap, $form-gap-multiple)
+        padding: 8px 10px
+        border: 1px solid $primary
+        border-radius: $radius
+        transition: transition(background-color)
+        transition: transition(color)
+
+        &:hover
+            cursor: pointer
+            background-color: $white
+            color: $primary
+
+// Media Queries
+
+@media (max-width: 1000px)
+    $form-gap: 10px
+
+    .login-container
+
+        img
+            width: 120px
+
+        form
+            padding: 20px 55px
+
+            header
+                margin-bottom: loginGap($form-gap, $form-gap-multiple)
+
+                h1
+                    font-size: 50px
+
+            label
+                font-size: 15.5px
+
+            input
+                width: 230px
+                height: 45px
+
+            button
+                font-size: 18.5px
+                margin-top: loginGap($form-gap, $form-gap-multiple)
+
+@media (max-width: 650px)
+    $form-gap: 8px
+
+    .login-container
+
+        img
+            width: 100px
+
+        form
+            padding: 20px 45px
+
+            header
+                margin-bottom: loginGap($form-gap, $form-gap-multiple)
+
+                h1
+                    font-size: 45px
+
+            label
+                font-size: 15px
+
+            input
+                width: 220px
+                height: 40px
+
+            button
+                font-size: 16px
+                margin-top: loginGap($form-gap, $form-gap-multiple)
+
+@media (max-width: 650px)
+    $form-gap: 5px
+
+    .login-container
+
+        img
+            width: 90px
+
+        form
+            padding: 20px 40px
+
+            header
+                margin-bottom: loginGap($form-gap, $form-gap-multiple)
+
+                h1
+                    font-size: 40px
+
+            label
+                font-size: 14px
+
+            input
+                width: 200px
+                height: 38px
+
+            button
+                font-size: 15.5px
+                margin-top: loginGap($form-gap, $form-gap-multiple)
