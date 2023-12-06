@@ -1,0 +1,33 @@
+// Colors
+
+$primary: #371821
+$secondary: #DC952F
+$black: #333
+$white: #fdfefe
+$red: #da1500
+$gray: #bfb9b9
+
+// Fonts
+
+$Satisfy: 'Satisfy', cursive
+
+// Border
+
+$radius: 5px
+
+//Mixins
+
+@mixin flexRow
+    display: flex
+
+@mixin flexColumn
+    display: flex
+    flex-direction: column
+
+// Functions
+
+@function loginGap($gap, $multiple)
+    @return calc($gap * $multiple)
+
+@function transition($property)
+    @return $property .3s ease
