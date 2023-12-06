@@ -554,12 +554,36 @@ video {
   margin-top: 1.5rem;
 }
 
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+
+.mb-0{
+  margin-bottom: 0px;
+}
+
 .flex{
   display: flex;
 }
 
 .h-screen{
   height: 100vh;
+}
+
+.w-10{
+  width: 2.5rem;
+}
+
+.w-40{
+  width: 10rem;
+}
+
+.w-28{
+  width: 7rem;
+}
+
+.w-32{
+  width: 8rem;
 }
 
 .flex-col{
@@ -580,6 +604,10 @@ video {
 
 .gap-4{
   gap: 1rem;
+}
+
+.gap-3{
+  gap: 0.75rem;
 }
 
 .rounded-md{
