@@ -1,11 +1,148 @@
-.login-header {
-  color: #DC952F;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  justify-content: center;
+  align-items: center;
+}
+.login-container img {
+  width: 130px;
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 65px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+.login-container form header {
+  color: #371821;
+  font-family: Satisfy;
+  margin-bottom: 18px;
+}
+.login-container form header h1 {
+  font-size: 55px;
+}
+.login-container form label {
+  color: #371821;
+}
+.login-container form input {
+  width: 240px;
+  height: 45px;
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+.login-container form input:focus {
+  outline-color: #333;
+}
+.login-container button {
+  background-color: #371821;
+  color: #fdfefe;
+  font-size: 20px;
+  margin-top: 18px;
+  padding: 8px 10px;
+  border: 1px solid #371821;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.login-container button:hover {
+  cursor: pointer;
+  background-color: #fdfefe;
+  color: #371821;
+}
+
+@media (max-width: 1000px) {
+  .login-container img {
+    width: 120px;
+  }
+  .login-container form {
+    padding: 20px 55px;
+  }
+  .login-container form header {
+    margin-bottom: 12px;
+  }
+  .login-container form header h1 {
+    font-size: 50px;
+  }
+  .login-container form label {
+    font-size: 15.5px;
+  }
+  .login-container form input {
+    width: 230px;
+    height: 45px;
+  }
+  .login-container form button {
+    font-size: 18.5px;
+    margin-top: 12px;
+  }
+}
+@media (max-width: 650px) {
+  .login-container img {
+    width: 100px;
+  }
+  .login-container form {
+    padding: 20px 45px;
+  }
+  .login-container form header {
+    margin-bottom: 9.6px;
+  }
+  .login-container form header h1 {
+    font-size: 45px;
+  }
+  .login-container form label {
+    font-size: 15px;
+  }
+  .login-container form input {
+    width: 220px;
+    height: 40px;
+  }
+  .login-container form button {
+    font-size: 16px;
+    margin-top: 9.6px;
+  }
+}
+@media (max-width: 650px) {
+  .login-container img {
+    width: 90px;
+  }
+  .login-container form {
+    padding: 20px 40px;
+  }
+  .login-container form header {
+    margin-bottom: 6px;
+  }
+  .login-container form header h1 {
+    font-size: 40px;
+  }
+  .login-container form label {
+    font-size: 14px;
+  }
+  .login-container form input {
+    width: 200px;
+    height: 38px;
+  }
+  .login-container form button {
+    font-size: 15.5px;
+    margin-top: 6px;
+  }
+}
 body, html {
+  background-color: #fdfefe;
   max-width: 100%;
+  min-width: 380px;
   overflow-x: clip;
-  margin: 0;
   font-family: "Rubik", sans-serif;
   scroll-behavior: smooth;
 }
