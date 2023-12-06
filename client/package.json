@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "GENERATE_SOURCEMAP=false vite build",
+    "sass": "sass --watch src/styles:dist --style expanded --no-source-map",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

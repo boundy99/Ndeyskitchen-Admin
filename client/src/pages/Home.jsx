@@ -5,9 +5,5 @@ import useFetchedOrders from '../../hooks/useFetchedOrders';
 export default function Boilerplate() {
   const { orders, isLoading } = useFetchedOrders();
 
-  return isLoading ? (
-    <Loader />
-  ) : (
-    <div className="text-3xl font-bold underline text-center">Home</div>
-  );
+  return isLoading ? <Loader /> : <div className="home">Home</div>;
 }
