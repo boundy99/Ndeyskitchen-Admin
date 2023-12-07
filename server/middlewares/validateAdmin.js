@@ -1,7 +1,7 @@
 const Admin = require('../database/models/adminModel');
 const jwt = require('jsonwebtoken');
 
-const { TOKEN_EXPIRED } = require('../messages');
+const { TOKEN_EXPIRED, ADMIN_NOT_FOUND } = require('../messages');
 
 async function validateAdmin(req, res, next) {
   const { admin } = req.body;
@@ -14,8 +14,10 @@ async function validateAdmin(req, res, next) {
 
       if (err === null) {
         const admin = await Admin.findOne({ _id: payload.id });
-        req.admin = admin;
 
+        if (!admin) return res.status(404).json({ message: ADMIN_NOT_FOUND });
+
+        req.admin = admin;
         next();
       }
 
