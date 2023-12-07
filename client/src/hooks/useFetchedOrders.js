@@ -11,6 +11,8 @@ export default function useFetchedOrders() {
 
   useEffect(() => {
     async function getOrders() {
+      if (!admin) return;
+
       const response = await fetch('/api/orders', {
         method: 'POST',
         body: JSON.stringify({ admin }),
