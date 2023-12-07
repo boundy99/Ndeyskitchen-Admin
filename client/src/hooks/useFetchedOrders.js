@@ -26,9 +26,9 @@ export default function useFetchedOrders() {
 
       if (
         json.Message === 'Token expired' ||
-        json.Message === 'User not found'
+        json.Message === 'Admin not found'
       ) {
-        localStorage.removeItem('token');
+        localStorage.removeItem('admin_token');
         dispatch({ type: 'LOGOUT' });
         navigate('/login');
       }
