@@ -1,6 +1,6 @@
 # Ndeyskitchen-Admin
 
-This project uses a tech stack consisting of React, Vite, CSS, MongoDB, AWS, and Nginx.
+This project uses a tech stack consisting of React, Vite, Sass, MongoDB, AWS, and Nginx.
 
 ## Tools
 - React
