@@ -2,7 +2,7 @@ import { React, useState, useSyncExternalStore } from 'react';
 import useAuthContext from '../hooks/useAuthContext';
 
 export default function Login() {
-  const { admin, dispatch } = useAuthContext();
+  const { dispatch } = useAuthContext();
 
   const [form, setForm] = useState({
     username: '',
