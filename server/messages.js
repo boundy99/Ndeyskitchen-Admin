@@ -1,5 +1,5 @@
 module.exports = {
-  USER_NOT_FOUND: 'User not found',
+  ADMIN_NOT_FOUND: 'Admin not found',
   ORDERS_NOT_FOUND: 'Orders not found',
   UNAUTHORIZED_REQUEST: 'Unauthorized request',
   PASSWORD_INCORRECT: 'Password incorrect',
