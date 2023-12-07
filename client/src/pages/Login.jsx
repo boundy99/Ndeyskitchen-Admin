@@ -1,5 +1,4 @@
 import { React, useState, useSyncExternalStore } from 'react';
-import AuthStore from '../stores/AuthStore';
 
 export default function Login() {
   const [form, setForm] = useState({
@@ -47,7 +46,7 @@ export default function Login() {
           });
       }
 
-      AuthStore.setToken(json.token);
+      localStorage.setItem('admin_token', json.token);
     } catch (err) {
       console.log(err);
     }
