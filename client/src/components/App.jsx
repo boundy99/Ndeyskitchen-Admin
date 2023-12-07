@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
+import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import useAuthContext from '../hooks/useAuthContext';
 
@@ -8,7 +8,7 @@ function App() {
 
   const privateRoutes = (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Dashboard />} />
     </Routes>
   );
 
