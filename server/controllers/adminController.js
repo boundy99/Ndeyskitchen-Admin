@@ -10,11 +10,11 @@ async function adminLogin(req, res) {
   try {
     const foundAdmin = await Admin.findOne({ username: admin.username });
 
-    if (!foundAdmin) return res.status(404).json({ error: USER_NOT_FOUND });
+    if (!foundAdmin) return res.status(404).json({ message: USER_NOT_FOUND });
 
     const match = await bcrypt.compare(admin.password, foundAdmin.password);
 
-    if (!match) return res.status(404).json({ error: PASSWORD_INCORRECT });
+    if (!match) return res.status(404).json({ message: PASSWORD_INCORRECT });
 
     const token = jwt.sign({ id: foundAdmin._id }, process.env.JWT, {
       expiresIn: '1d',
