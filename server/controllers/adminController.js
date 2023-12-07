@@ -2,7 +2,7 @@ const Admin = require('../database/models/adminModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const { USER_NOT_FOUND, PASSWORD_INCORRECT } = require('../messages');
+const { ADMIN_NOT_FOUND, PASSWORD_INCORRECT } = require('../messages');
 
 async function adminLogin(req, res) {
   const { admin } = req.body;
@@ -10,7 +10,7 @@ async function adminLogin(req, res) {
   try {
     const foundAdmin = await Admin.findOne({ username: admin.username });
 
-    if (!foundAdmin) return res.status(404).json({ message: USER_NOT_FOUND });
+    if (!foundAdmin) return res.status(404).json({ message: ADMIN_NOT_FOUND });
 
     const match = await bcrypt.compare(admin.password, foundAdmin.password);
 
