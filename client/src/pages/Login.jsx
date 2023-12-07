@@ -1,9 +1,15 @@
-import { React, useState } from 'react';
+import { React, useState, useSyncExternalStore } from 'react';
+import AuthStore from '../stores/AuthStore';
 
 export default function Login() {
   const [form, setForm] = useState({
     username: '',
     password: '',
+  });
+
+  const [errors, setErrors] = useState({
+    usernameError: '',
+    passwordError: '',
   });
 
   function handleChange(event) {
@@ -28,10 +34,22 @@ export default function Login() {
       const json = await response.json();
 
       if (!response.ok) {
-        console.log(json.message);
+        if (json.message === 'User not found')
+          setErrors({
+            usernameError: true,
+            passwordError: true,
+          });
+
+        if (json.message === 'Password incorrect')
+          setErrors({
+            usernameError: false,
+            passwordError: true,
+          });
       }
+
+      AuthStore.setToken(json.token);
     } catch (err) {
-      console.error.log(err);
+      console.log(err);
     }
   }
 
@@ -46,19 +64,23 @@ export default function Login() {
 
         <label htmlFor="username">Username</label>
         <input
+          style={{ borderColor: errors.usernameError ? '#DC952F' : '' }}
           name="username"
           id="username"
           type="text"
           onChange={handleChange}
+          onClick={() => setErrors({ ...errors, usernameError: false })}
           required
         />
 
         <label htmlFor="password">Password</label>
         <input
+          style={{ borderColor: errors.passwordError ? '#DC952F' : '' }}
           name="password"
           id="password"
           type="password"
           onChange={handleChange}
+          onClick={() => setErrors({ ...errors, passwordError: false })}
           required
         />
 
