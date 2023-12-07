@@ -1,6 +1,9 @@
 import { React, useState, useSyncExternalStore } from 'react';
+import useAuthContext from '../hooks/useAuthContext';
 
 export default function Login() {
+  const { admin, dispatch } = useAuthContext();
+
   const [form, setForm] = useState({
     username: '',
     password: '',
@@ -47,6 +50,7 @@ export default function Login() {
       }
 
       localStorage.setItem('admin_token', json.token);
+      dispatch({ type: 'LOGIN', payload: json.token });
     } catch (err) {
       console.log(err);
     }
