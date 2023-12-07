@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import useAuthContext from '../hooks/useAuthContext';
 
 export default function useFetchedOrders() {
