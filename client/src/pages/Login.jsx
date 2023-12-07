@@ -1,8 +1,10 @@
-import { React, useState, useSyncExternalStore } from 'react';
+import { React, useState } from 'react';
 import useAuthContext from '../hooks/useAuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const { dispatch } = useAuthContext();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     username: '',
@@ -51,6 +53,7 @@ export default function Login() {
 
       localStorage.setItem('admin_token', json.token);
       dispatch({ type: 'LOGIN', payload: json.token });
+      navigate('/');
     } catch (err) {
       console.log(err);
     }
