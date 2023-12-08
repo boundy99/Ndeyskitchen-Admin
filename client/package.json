@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "build": "GENERATE_SOURCEMAP=false vite build",
     "sass": "sass --watch src/styles:dist --style expanded --no-source-map",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
