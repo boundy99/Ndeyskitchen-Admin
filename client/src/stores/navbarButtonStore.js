@@ -5,7 +5,7 @@ const navabarButtonStore = {
   subscribe(notify) {
     notifiers.add(notify);
 
-    return notifiers.remove(notify);
+    return () => notifiers.delete(notify);
   },
 
   setButton(name) {
