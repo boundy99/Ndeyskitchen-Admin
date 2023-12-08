@@ -1,25 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
+import Navbar from '../components/dashboard/Navbar';
 import useFetchedOrders from '../hooks/useFetchedOrders';
-import useAuthContext from '../hooks/useAuthContext';
 
-export default function Boilerplate() {
-  const { orders, isLoading } = useFetchedOrders();
-  const { admin, dispatch } = useAuthContext();
-  const navigate = useNavigate();
-
-  function handleClick() {
-    localStorage.removeItem('admin_token');
-    dispatch({ type: 'LOGOUT' });
-    navigate('/login');
-  }
+export default function Home() {
+  const { isLoading } = useFetchedOrders();
 
   return isLoading ? (
     <Loader />
   ) : (
-    <div className="home">
-      <button onClick={handleClick}>LOGOUT</button>
+    <div className="dashboard">
+      <header>
+        <Navbar />
+      </header>
     </div>
   );
 }
