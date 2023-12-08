@@ -10,9 +10,9 @@ export default function Home() {
   return isLoading ? (
     <Loader />
   ) : (
-    <div className="dashboard">
+    <>
       <Navbar />
       <Content />
-    </div>
+    </>
   );
 }
