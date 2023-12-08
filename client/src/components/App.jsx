@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import useAuthContext from '../hooks/useAuthContext';
@@ -15,6 +15,7 @@ function App() {
   const publicRoute = (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="*" element={<Navigate to="/login" replace={true} />} />
     </Routes>
   );
 
