@@ -11,7 +11,7 @@ $gray: #bfb9b9
 
 $Satisfy: 'Satisfy', cursive
 
-// Border
+// Borders
 
 $radius: 5px
 
@@ -24,10 +24,14 @@ $radius: 5px
     display: flex
     flex-direction: column
 
+@mixin allCentered
+    justify-content: center
+    align-items: center
+
 // Functions
 
 @function loginGap($gap, $multiple)
-    @return calc($gap * $multiple)
+    @return $gap * $multiple
 
 @function transition($property)
     @return $property .3s ease
