@@ -24,12 +24,15 @@ export default function Navbar() {
           href="/"
         />
         <ul>
-          <li onClick={() => navigate('/orders')}>Orders</li>
+          <li href="#">Earnings</li>
+          <li href="#">Orders</li>
           <li>
             {isBigScreen ? (
               <button onClick={handleClick}>Logout</button>
             ) : (
-              <span className="material-symbols-outlined">logout</span>
+              <span className="material-symbols-outlined" onClick={handleClick}>
+                logout
+              </span>
             )}
           </li>
         </ul>
