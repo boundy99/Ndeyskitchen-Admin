@@ -3,6 +3,7 @@
 @import './login'
 @import './dashboard'
 @import './navbar'
+@import './earnings'
 
 body, html
     background-color: $white
@@ -11,3 +12,7 @@ body, html
     overflow-x: clip
     font-family: 'Rubik', sans-serif
     scroll-behavior: smooth
+
+main
+    @include flexColumn
+    align-items: center

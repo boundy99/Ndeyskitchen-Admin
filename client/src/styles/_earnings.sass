@@ -1,0 +1,114 @@
+$earnings-gap: 30px
+$padding: 50px
+
+.earnings-container
+    @include flexColumn
+
+    align-items: center
+    padding: $padding 0
+    border: 2px solid $secondary
+    border-radius: $radius
+    gap: $earnings-gap
+
+    h1
+        font-weight: normal
+        text-decoration: underline
+        color: $secondary
+
+    table
+        text-align: center
+
+        th, td
+            padding: 10px 150px
+
+        th
+            color: $primary
+            font-size: 23px
+
+        td
+            color: $secondary
+            font-size: 18px
+            letter-spacing: .5px
+
+// Media Queries
+
+@media (max-width: 1200px)
+    $earnings-gap: 20px
+    $padding: 30px
+
+    .earnings-container
+        gap: $earnings-gap
+
+        h1
+            font-size: 27px
+
+        table
+            th, td
+                padding: 5px 80px
+
+            th
+                font-size: 20px
+
+            td
+                font-size: 16px
+                letter-spacing: .5px
+
+@media (max-width: 800px)
+    $earnings-gap: 10px
+    $padding: 30px
+
+    .earnings-container
+        gap: $earnings-gap
+
+        h1
+            font-size: 22px
+
+        table
+            th, td
+                padding: 5px 60px
+
+            th
+                font-size: 18px
+
+            td
+                font-size: 15px
+
+@media (max-width: 650px)
+    $earnings-gap: 7px
+    $padding: 20px
+
+    .earnings-container
+        gap: $earnings-gap
+
+        h1
+            font-size: 18px
+
+        table
+            th, td
+                padding: 5px 45px
+
+            th
+                font-size: 15px
+
+            td
+                font-size: 13.5px
+
+@media (max-width: 500px)
+    $earnings-gap: 4px
+    $padding: 20px
+
+    .earnings-container
+        gap: $earnings-gap
+
+        h1
+            font-size: 16px
+
+        table
+            th, td
+                padding: 5px 35px
+
+            th
+                font-size: 13.5px
+
+            td
+                font-size: 12px

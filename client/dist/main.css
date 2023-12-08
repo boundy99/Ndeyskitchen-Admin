@@ -240,6 +240,105 @@
     font-size: 17px;
   }
 }
+.earnings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  border: 2px solid #DC952F;
+  border-radius: 5px;
+  gap: 30px;
+}
+.earnings-container h1 {
+  font-weight: normal;
+  text-decoration: underline;
+  color: #DC952F;
+}
+.earnings-container table {
+  text-align: center;
+}
+.earnings-container table th, .earnings-container table td {
+  padding: 10px 150px;
+}
+.earnings-container table th {
+  color: #371821;
+  font-size: 23px;
+}
+.earnings-container table td {
+  color: #DC952F;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1200px) {
+  .earnings-container {
+    gap: 20px;
+  }
+  .earnings-container h1 {
+    font-size: 27px;
+  }
+  .earnings-container table th, .earnings-container table td {
+    padding: 5px 80px;
+  }
+  .earnings-container table th {
+    font-size: 20px;
+  }
+  .earnings-container table td {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+@media (max-width: 800px) {
+  .earnings-container {
+    gap: 10px;
+  }
+  .earnings-container h1 {
+    font-size: 22px;
+  }
+  .earnings-container table th, .earnings-container table td {
+    padding: 5px 60px;
+  }
+  .earnings-container table th {
+    font-size: 18px;
+  }
+  .earnings-container table td {
+    font-size: 15px;
+  }
+}
+@media (max-width: 650px) {
+  .earnings-container {
+    gap: 7px;
+  }
+  .earnings-container h1 {
+    font-size: 18px;
+  }
+  .earnings-container table th, .earnings-container table td {
+    padding: 5px 45px;
+  }
+  .earnings-container table th {
+    font-size: 15px;
+  }
+  .earnings-container table td {
+    font-size: 13.5px;
+  }
+}
+@media (max-width: 500px) {
+  .earnings-container {
+    gap: 4px;
+  }
+  .earnings-container h1 {
+    font-size: 16px;
+  }
+  .earnings-container table th, .earnings-container table td {
+    padding: 5px 35px;
+  }
+  .earnings-container table th {
+    font-size: 13.5px;
+  }
+  .earnings-container table td {
+    font-size: 12px;
+  }
+}
 body, html {
   background-color: #fdfefe;
   max-width: 100%;
@@ -247,4 +346,10 @@ body, html {
   overflow-x: clip;
   font-family: "Rubik", sans-serif;
   scroll-behavior: smooth;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
