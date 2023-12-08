@@ -25,42 +25,47 @@ export default function Navbar() {
   }
   return (
     <Headroom>
-      <nav className="navbar-container">
-        <img
-          className="navbar-image"
-          src="../../images/ndeys-kitchen.png"
-          href="/"
-        />
-        <ul>
-          <li
-            style={{
-              color: buttonClicked === 'earnings' ? '#DC952F' : '',
-            }}
-            onClick={() => handleButtonClick('earnings')}
-            href="#"
-          >
-            Earnings
-          </li>
-          <li
-            style={{
-              color: buttonClicked === 'orders' ? '#DC952F' : '',
-            }}
-            onClick={() => handleButtonClick('orders')}
-            href="#"
-          >
-            Orders
-          </li>
-          <li>
-            {isBigScreen ? (
-              <button onClick={handleClick}>Logout</button>
-            ) : (
-              <span className="material-symbols-outlined" onClick={handleClick}>
-                logout
-              </span>
-            )}
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <nav className="navbar-container">
+          <img
+            className="navbar-image"
+            src="../../images/ndeys-kitchen.png"
+            href="/"
+          />
+          <ul>
+            <li
+              style={{
+                color: buttonClicked === 'earnings' ? '#DC952F' : '',
+              }}
+              onClick={() => handleButtonClick('earnings')}
+              href="#"
+            >
+              Earnings
+            </li>
+            <li
+              style={{
+                color: buttonClicked === 'orders' ? '#DC952F' : '',
+              }}
+              onClick={() => handleButtonClick('orders')}
+              href="#"
+            >
+              Orders
+            </li>
+            <li>
+              {isBigScreen ? (
+                <button onClick={handleClick}>Logout</button>
+              ) : (
+                <span
+                  className="material-symbols-outlined"
+                  onClick={handleClick}
+                >
+                  logout
+                </span>
+              )}
+            </li>
+          </ul>
+        </nav>
+      </header>
     </Headroom>
   );
 }
