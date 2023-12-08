@@ -25,6 +25,9 @@ const months = [
 
 const date = new Date();
 
+const currentDate = date.getDate();
+let currentMonth = date.getMonth() + 1;
+
 const dayOfWeek = date.getDay();
 
 const monthNumber = date.getMonth();
@@ -35,4 +38,4 @@ const month = months[monthNumber];
 
 const year = date.getFullYear();
 
-export default { day, month, year };
+export default { currentDate, currentMonth, day, month, year };
