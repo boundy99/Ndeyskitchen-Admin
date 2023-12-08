@@ -1,6 +1,7 @@
 import React from 'react';
 import Loader from '../components/Loader';
 import Navbar from '../components/dashboard/Navbar';
+import Content from '../components/dashboard/Content';
 import useFetchedOrders from '../hooks/useFetchedOrders';
 
 export default function Home() {
@@ -10,9 +11,8 @@ export default function Home() {
     <Loader />
   ) : (
     <div className="dashboard">
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
+      <Content />
     </div>
   );
 }
