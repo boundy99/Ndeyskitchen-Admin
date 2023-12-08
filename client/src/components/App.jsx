@@ -7,22 +7,23 @@ function App() {
   const { admin } = useAuthContext();
 
   const privateRoutes = (
-    <Routes>
+    <>
       <Route path="/" element={<Dashboard />} />
-    </Routes>
+    </>
   );
 
   const publicRoute = (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="*" element={<Navigate to="/login" replace={true} />} />
-    </Routes>
+    <>
+      <Route path="*" element={<Login />} />
+    </>
   );
 
   return (
     <div className="App">
       <BrowserRouter>
-        <div className="pages">{admin ? privateRoutes : publicRoute}</div>
+        <div className="pages">
+          <Routes>{admin ? privateRoutes : publicRoute}</Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
