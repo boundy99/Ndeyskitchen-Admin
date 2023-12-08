@@ -1,4 +1,4 @@
-let button;
+let button = 'earnings';
 const notifiers = new Set();
 
 const navabarButtonStore = {
@@ -10,6 +10,7 @@ const navabarButtonStore = {
 
   setButton(name) {
     button = name;
+    notifiers.forEach(notify => notify());
   },
 
   getButton() {
