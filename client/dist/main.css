@@ -403,8 +403,8 @@
 .orders-container .order-card-container .order-card {
   display: flex;
   flex-direction: column;
-  min-width: 246px;
-  padding: 8px 25px;
+  min-width: 243px;
+  padding: 8px 22px;
   border: 1px solid #371821;
   border-radius: 5px;
   gap: 10px;
