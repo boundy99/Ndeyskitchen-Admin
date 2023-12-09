@@ -403,6 +403,7 @@
 .orders-container .order-card-container .order-card {
   display: flex;
   flex-direction: column;
+  min-width: 246px;
   padding: 8px 25px;
   border: 1px solid #371821;
   border-radius: 5px;
@@ -442,6 +443,7 @@
     gap: 4px;
   }
   .orders-container .order-card-container .order-card {
+    min-width: 244px;
     padding: 8px 25px;
     gap: 10px;
   }
@@ -478,6 +480,7 @@
     gap: 4px;
   }
   .orders-container .order-card-container .order-card {
+    min-width: 228px;
     padding: 8px 20px;
     gap: 10px;
   }
@@ -520,6 +523,7 @@
     gap: 4px;
   }
   .orders-container .order-card-container .order-card {
+    min-width: 201px;
     padding: 8px 15px;
     gap: 10px;
   }
@@ -558,10 +562,8 @@
     padding: 8px 20px;
     font-size: 12px;
   }
-  .orders-container .order-card-container {
-    gap: px;
-  }
   .orders-container .order-card-container .order-card {
+    min-width: 174px;
     padding: 8px 10px;
     gap: 10px;
   }
