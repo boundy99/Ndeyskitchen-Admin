@@ -1,0 +1,247 @@
+$width: 1000px
+$status-btn-gap: 20px
+$orders-gap: 15px
+
+.orders-container
+    @include flexColumn
+    align-items: center
+    width: $width
+    max-width: $width
+    padding: $padding 0
+    border: 2px solid $secondary
+    border-radius: $radius
+    gap: $orders-gap
+
+    h1
+        font-weight: normal
+        text-decoration: underline
+        color: $secondary
+
+    .status-btn
+        @include flexRow
+        gap: $status-btn-gap
+
+    button
+        background-color: $primary
+        color: $white
+        padding: 8px 10px
+        font-size: 18px
+        border: 1px solid $primary
+        border-radius: $radius
+        white-space: nowrap
+        transition: transition(background-color)
+        transition: transition(color)
+
+        &:hover
+            cursor: pointer
+            background-color: $white
+            color: $primary
+
+    .orders-amount-and-input
+        @include flexColumn
+        @include allCentered
+        gap: 5px
+        margin: 15px 0
+
+        input
+            padding: 8px 25px
+            border: 1px solid $primary
+            border-radius: $radius
+            font-size: 14px
+            outline: none
+            transition: transition(border-color)
+
+            &:hover, &:focus
+                border-color: $secondary
+
+    .order-card-container
+        @include flexRow
+
+        justify-content: center
+        flex-wrap: wrap
+        gap: 4px
+
+        .order-card
+            @include flexColumn
+
+            padding: 8px 25px
+            border: 1px solid $primary
+            border-radius: $radius
+            gap: 10px
+
+            .information
+                @include flexRow
+                gap: 10px
+
+// Medias Queries
+
+@media (max-width: 1050px)
+    $width: 790px
+    $status-btn-gap: 18px
+    $orders-gap: 15px
+
+    .orders-container
+        width: $width
+        max-width: $width
+        padding: $padding 0
+        gap: $orders-gap
+
+        h1
+            font-size: 27px
+
+        .status-btn
+            gap: $status-btn-gap
+
+        button
+            padding: 8px 10px
+            font-size: 18px
+
+        .orders-amount-and-input
+            gap: 5px
+            margin: 15px 0
+
+            input
+                padding: 8px 25px
+                font-size: 14px
+
+        .order-card-container
+            gap: 4px
+
+            .order-card
+                padding: 8px 25px
+                gap: 10px
+
+                .information
+                    gap: 10px
+
+@media (max-width: 800px)
+    $width: 600px
+    $status-btn-gap: 12px
+    $orders-gap: 12px
+
+    .orders-container
+        width: $width
+        max-width: $width
+        padding: $padding 0
+        gap: $orders-gap
+
+        h1
+            font-size: 27px
+
+        .status-btn
+            gap: $status-btn-gap
+
+        button
+            padding: 8px 10px
+            font-size: 17px
+
+        .orders-amount-and-input
+            gap: 5px
+            margin: 15px 0
+
+            input
+                padding: 8px 25px
+                font-size: 14px
+
+        .order-card-container
+            gap: 4px
+
+            .order-card
+                padding: 8px 20px
+                gap: 10px
+
+                .information
+                    gap: 8px
+
+                    p
+                        font-size: 15.5px
+
+@media (max-width: 650px)
+    $width: 480px
+    $status-btn-gap: 10px
+    $orders-gap: 10px
+
+    .orders-container
+        width: $width
+        max-width: $width
+        padding: $padding 0
+        gap: $orders-gap
+
+        h1
+            font-size: 18px
+
+        .status-btn
+            gap: $status-btn-gap
+
+        button
+            padding: 8px 10px
+            font-size: 14px
+
+        .orders-amount-and-input
+            gap: 5px
+            margin: 10px 0
+
+            p
+                font-size: 14px
+
+            input
+                padding: 8px 20px
+                font-size: 13px
+
+        .order-card-container
+            gap: 4px
+
+            .order-card
+                padding: 8px 15px
+                gap: 10px
+
+                .information
+                    gap: 8px
+
+                    p
+                        font-size: 14px
+
+@media (max-width: 500px)
+    $width: 375px
+    $status-btn-gap: 8px
+    $orders-gap: 10px
+
+    .orders-container
+        width: $width
+        max-width: $width
+        padding: $padding 0
+        gap: $orders-gap
+
+        h1
+            font-size: 16px
+
+        .status-btn
+            gap: $status-btn-gap
+
+        button
+            padding: 8px 10px
+            font-size: 12.5px
+
+        .orders-amount-and-input
+            gap: 5px
+            margin: 10px 0
+
+            p
+                font-size: 13px
+
+            input
+                padding: 8px 20px
+                font-size: 12px
+
+        .order-card-container
+            gap: px
+
+            .order-card
+                padding: 8px 10px
+                gap: 10px
+
+                .information
+                    gap: 8px
+
+                    p
+                        font-size: 12.5px
