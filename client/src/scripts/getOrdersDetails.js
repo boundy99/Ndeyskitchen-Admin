@@ -31,17 +31,26 @@ export default function getOrdersDetails() {
   });
 
   const currentDayEarnings = ordersForCurrentDay.reduce(
-    (accumulator, order) => accumulator + parseInt(order.total),
+    (accumulator, order) =>
+      order.status === 'Complete'
+        ? accumulator + parseInt(order.total, 10)
+        : accumulator,
     0
   );
 
   const currentMonthEarnings = ordersForCurrentMonth.reduce(
-    (accumulator, order) => accumulator + parseInt(order.total),
+    (accumulator, order) =>
+      order.status === 'Complete'
+        ? accumulator + parseInt(order.total, 10)
+        : accumulator,
     0
   );
 
   const currentYearEarnings = ordersForCurrentYear.reduce(
-    (accumulator, order) => accumulator + parseInt(order.total),
+    (accumulator, order) =>
+      order.status === 'Complete'
+        ? accumulator + parseInt(order.total, 10)
+        : accumulator,
     0
   );
 
