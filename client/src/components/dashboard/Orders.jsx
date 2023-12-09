@@ -49,7 +49,6 @@ export default function Orders() {
 
       <div className="orders-amount-and-input">
         <p>
-          {' '}
           {filteredOrders.length > 0
             ? `Orders amount: ${filteredOrders.length}`
             : 'No result found'}
