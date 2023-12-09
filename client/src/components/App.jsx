@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
+import OrderView from './dashboard/OrderView';
 import useAuthContext from '../hooks/useAuthContext';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const privateRoutes = (
     <>
       <Route path="/" element={<Dashboard />} />
+      <Route path="/order/:id" element={<OrderView />} />
     </>
   );
 

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function OrderCard({ filteredOrders }) {
+  const navigate = useNavigate();
+
   return (
     <div className="order-card-container">
       {filteredOrders.map(order => (
@@ -10,7 +13,7 @@ export default function OrderCard({ filteredOrders }) {
             <p className="customer-name">{`${order.firstName} ${order.lastName}`}</p>
           </div>
 
-          <button>View</button>
+          <button onClick={() => navigate(`/order/${order._id}`)}>View</button>
         </div>
       ))}
     </div>
