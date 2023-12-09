@@ -9,5 +9,6 @@ export default function Content() {
     navabarButtonStore.getButton
   );
 
+  console.log(button);
   return <main>{button === 'earnings' ? <Earnings /> : <Orders />}</main>;
 }

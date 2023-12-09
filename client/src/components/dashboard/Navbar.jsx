@@ -6,12 +6,14 @@ import useAuthContext from '../../hooks/useAuthContext';
 import navabarButtonStore from '../../stores/navbarButtonStore';
 
 export default function Navbar() {
-  const [buttonClicked, setButtonClicked] = useState('earnings');
+  const [buttonClicked, setButtonClicked] = useState('orders');
 
   const isBigScreen = useMediaQuery({ query: '(min-width: 650px)' });
 
   const { dispatch } = useAuthContext();
   const navigate = useNavigate();
+
+  navabarButtonStore.setButton(buttonClicked);
 
   function handleButtonClick(name) {
     setButtonClicked(name);
@@ -35,15 +37,6 @@ export default function Navbar() {
           <ul>
             <li
               style={{
-                color: buttonClicked === 'earnings' ? '#DC952F' : '',
-              }}
-              onClick={() => handleButtonClick('earnings')}
-              href="#"
-            >
-              Earnings
-            </li>
-            <li
-              style={{
                 color: buttonClicked === 'orders' ? '#DC952F' : '',
               }}
               onClick={() => handleButtonClick('orders')}
@@ -51,6 +44,17 @@ export default function Navbar() {
             >
               Orders
             </li>
+
+            <li
+              style={{
+                color: buttonClicked === 'earnings' ? '#DC952F' : '',
+              }}
+              onClick={() => handleButtonClick('earnings')}
+              href="#"
+            >
+              Earnings
+            </li>
+
             <li>
               {isBigScreen ? (
                 <button onClick={handleClick}>Logout</button>
