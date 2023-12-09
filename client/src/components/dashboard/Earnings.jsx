@@ -23,9 +23,11 @@ export default function Earnings() {
           </thead>
 
           <tbody>
-            <td>D {currentDayEarnings}</td>
-            <td>D {currentMonthEarnings}</td>
-            <td>D {currentYearEarnings}</td>
+            <tr>
+              <td>D {currentDayEarnings}</td>
+              <td>D {currentMonthEarnings}</td>
+              <td>D {currentYearEarnings}</td>
+            </tr>
           </tbody>
         </table>
       </div>
