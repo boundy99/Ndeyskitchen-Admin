@@ -1,7 +1,10 @@
 import { React } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Headroom from 'react-headroom';
 
 export default function OrderViewNabar({ orders, admin, id }) {
+  const navigate = useNavigate();
+
   const filteredOrder = orders.filter(order => order._id === id);
 
   const hasCakeItems = filteredOrder.some(order =>
@@ -41,7 +44,9 @@ export default function OrderViewNabar({ orders, admin, id }) {
     <Headroom>
       <header>
         <nav className="order-view-navbar-container">
-          <button className="back-btn">Back</button>
+          <button onClick={() => navigate('/')} className="back-btn">
+            Back
+          </button>
           <div className="receipts-btn-container">
             {hasCakeItems && (
               <button onClick={event => handleReceiptClick(event, 'cakes')}>
