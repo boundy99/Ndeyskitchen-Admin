@@ -19,31 +19,54 @@ async function getOrders(req, res) {
 }
 
 async function getOrderReceipt(req, res) {
-  const { id } = req.body;
+  const { id, type } = req.body;
+
+  console.log(type);
 
   try {
     const order = await Order.findById(id).lean();
 
     if (!order) return res.status(404).json({ message: ORDER_NOT_FOUND });
 
+    const cakesItems = order.items.filter(item => item.filter === 'Cakes');
+    const nonCakesItems = order.items.filter(item => item.filter !== 'Cakes');
+
     const stream = res.writeHead(200, {
       'Content-Type': 'application/pdf',
       'Content-Disposition': 'inline; filename=receipt.pdf',
     });
 
-    buildReceipt(
-      order,
-      chunk => stream.write(chunk),
-      () => {
-        stream.end();
-      }
-    );
+    if (type === 'cakes') {
+      buildReceipt(
+        order,
+        cakesItems,
+        order.cakesDate,
+        order.cakesTime,
+        chunk => stream.write(chunk),
+        () => {
+          stream.end();
+        }
+      );
+    }
+
+    if (type === 'nonCakes') {
+      buildReceipt(
+        order,
+        nonCakesItems,
+        order.nonCakesDate,
+        order.nonCakesTime,
+        chunk => stream.write(chunk),
+        () => {
+          stream.end();
+        }
+      );
+    }
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
 }
 
-function buildReceipt(order, dataCallback, endDataCallback) {
+function buildReceipt(order, items, date, time, dataCallback, endDataCallback) {
   const elementGap = 0.1;
   const sectionGap = 0.5;
   const imagePath = path.join(__dirname, '../image/ndeys-kitchen.png');
@@ -90,12 +113,10 @@ function buildReceipt(order, dataCallback, endDataCallback) {
     .text(`${order.residence}`)
     .moveDown(sectionGap * 2);
 
-  if (order.cakesDate && order.cakesTime) {
-    receipt
-      .text(`${order.cakesDate}`, { continued: true, align: 'left' })
-      .text(`${order.cakesTime}`, { align: 'right' })
-      .moveDown(sectionGap);
-  }
+  receipt
+    .text(`${date}`, { continued: true, align: 'left' })
+    .text(`${time}`, { align: 'right' })
+    .moveDown(sectionGap);
 
   receipt
     .moveDown(sectionGap * 2)
@@ -110,7 +131,7 @@ function buildReceipt(order, dataCallback, endDataCallback) {
     .text('Price', { align: 'right' })
     .moveDown(sectionGap);
 
-  order.items.map(item => {
+  items.map(item => {
     receipt
       .moveDown(elementGap)
       .text(item.quantity, { continued: true, align: 'left' })
