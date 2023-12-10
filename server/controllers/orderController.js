@@ -21,8 +21,6 @@ async function getOrders(req, res) {
 async function getOrderReceipt(req, res) {
   const { id, type } = req.body;
 
-  console.log(type);
-
   try {
     const order = await Order.findById(id).lean();
 
