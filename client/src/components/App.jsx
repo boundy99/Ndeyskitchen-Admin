@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
-import OrderView from './dashboard/OrderView';
+import OrderView from '../pages/OrderView';
 import useAuthContext from '../hooks/useAuthContext';
 
 function App() {
