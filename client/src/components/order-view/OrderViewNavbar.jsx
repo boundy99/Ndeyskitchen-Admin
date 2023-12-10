@@ -2,10 +2,8 @@ import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Headroom from 'react-headroom';
 
-export default function OrderViewNabar({ orders, admin, id }) {
+export default function OrderViewNabar({ filteredOrder, admin, id }) {
   const navigate = useNavigate();
-
-  const filteredOrder = orders.filter(order => order._id === id);
 
   const hasCakeItems = filteredOrder.some(order =>
     order.items.some(item => item.filter === 'Cakes')
