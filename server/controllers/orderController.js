@@ -70,7 +70,7 @@ function buildReceipt(order, items, date, time, dataCallback, endDataCallback) {
   const imagePath = path.join(__dirname, '../image/ndeys-kitchen.png');
   const size = 50;
 
-  const height = 285 + 60 * order.items.length;
+  const height = 300 + 20 * items.length;
 
   const receipt = new PDFDocument({
     size: [250, height],
@@ -92,9 +92,6 @@ function buildReceipt(order, items, date, time, dataCallback, endDataCallback) {
 
   receipt.font('Helvetica').fontSize(11);
 
-  receipt.text(`Ndey's Kitchen`, { align: 'center' });
-
-  receipt.moveDown(sectionGap);
   receipt
     .font('Helvetica-Bold')
     .fontSize(13)
