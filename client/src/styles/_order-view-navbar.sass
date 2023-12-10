@@ -1,0 +1,73 @@
+.order-view-navbar-container
+    @include flexRow
+    @include allCentered
+    position: sticky
+    top: 0
+    right: 0
+    left: 0
+    height: 150px
+    padding: 10px
+
+    button
+        background-color: $white
+        color: $primary
+        font-size: 20px
+        padding: 8px 5px
+        border: 1px solid $primary
+        border-radius: $radius
+        transition: transition(background-color)
+        transition: transition(color)
+
+        &:hover
+            cursor: pointer
+            color: $secondary
+            border-color: $secondary
+            transition: transition(color)
+
+    .back-btn
+        position: absolute
+        left: $margin-gap
+
+    .receipts-btn-container button
+
+    .receipts-btn-container
+        @include flexRow
+        position: absolute
+        right: $margin-gap
+        gap: $list-gap
+
+    // Media Queries
+
+@media (max-width: 1000px)
+    $margin-gap: 50px
+    $list-gap: 15px
+
+    .order-view-navbar-container
+        height: 130px
+
+        button
+            font-size: 18.5px
+
+        .back-btn
+            left: $margin-gap
+
+        .receipts-btn-container
+            right: $margin-gap
+            gap: $list-gap
+
+@media (max-width: 650px)
+    $margin-gap: 40px
+    $list-gap: 12px
+
+    .order-view-navbar-container
+        height: 120px
+
+        button
+            font-size: 16px
+
+        .back-btn
+            left: $margin-gap
+
+        .receipts-btn-container
+            right: $margin-gap
+            gap: $list-gap

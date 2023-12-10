@@ -113,31 +113,6 @@
     margin-top: 9.6px;
   }
 }
-@media (max-width: 650px) {
-  .login-container img {
-    width: 90px;
-  }
-  .login-container form {
-    padding: 20px 40px;
-  }
-  .login-container form header {
-    margin-bottom: 6px;
-  }
-  .login-container form header h1 {
-    font-size: 40px;
-  }
-  .login-container form label {
-    font-size: 14px;
-  }
-  .login-container form input {
-    width: 200px;
-    height: 38px;
-  }
-  .login-container form button {
-    font-size: 15.5px;
-    margin-top: 6px;
-  }
-}
 .navbar-container {
   display: flex;
   justify-content: center;
@@ -572,6 +547,74 @@
   }
   .orders-container .order-card-container .order-card .information p {
     font-size: 12.5px;
+  }
+}
+.order-view-navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 150px;
+  padding: 10px;
+}
+.order-view-navbar-container button {
+  background-color: #fdfefe;
+  color: #371821;
+  font-size: 20px;
+  padding: 8px 5px;
+  border: 1px solid #371821;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.order-view-navbar-container button:hover {
+  cursor: pointer;
+  color: #DC952F;
+  border-color: #DC952F;
+  transition: color 0.3s ease;
+}
+.order-view-navbar-container .back-btn {
+  position: absolute;
+  left: 60px;
+}
+.order-view-navbar-container .receipts-btn-container {
+  display: flex;
+  position: absolute;
+  right: 60px;
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .order-view-navbar-container {
+    height: 130px;
+  }
+  .order-view-navbar-container button {
+    font-size: 18.5px;
+  }
+  .order-view-navbar-container .back-btn {
+    left: 50px;
+  }
+  .order-view-navbar-container .receipts-btn-container {
+    right: 50px;
+    gap: 15px;
+  }
+}
+@media (max-width: 650px) {
+  .order-view-navbar-container {
+    height: 120px;
+  }
+  .order-view-navbar-container button {
+    font-size: 16px;
+  }
+  .order-view-navbar-container .back-btn {
+    left: 40px;
+  }
+  .order-view-navbar-container .receipts-btn-container {
+    right: 40px;
+    gap: 12px;
   }
 }
 body, html {
