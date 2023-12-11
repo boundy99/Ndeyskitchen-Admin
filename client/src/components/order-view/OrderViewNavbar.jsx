@@ -2,7 +2,7 @@ import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Headroom from 'react-headroom';
 
-export default function OrderViewNabar({ filteredOrder, admin }) {
+export default function OrderViewNabar({ filteredOrder, admin, id }) {
   const navigate = useNavigate();
 
   const hasCakeItems = filteredOrder.some(order =>
@@ -18,7 +18,7 @@ export default function OrderViewNabar({ filteredOrder, admin }) {
     try {
       const response = await fetch('/api/orders/get-order-receipt', {
         method: 'POST',
-        body: JSON.stringify({ admin, id: filteredOrder._id, type }),
+        body: JSON.stringify({ admin, id, type }),
         headers: {
           'Content-Type': 'application/json',
         },

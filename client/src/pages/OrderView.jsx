@@ -17,8 +17,8 @@ export default function OrderView() {
     <Loader />
   ) : (
     <>
-      <OrderViewNabar filteredOrder={filteredOrder} admin={admin} />
-      <OrderViewContent filteredOrder={filteredOrder} admin={admin} />
+      <OrderViewNabar filteredOrder={filteredOrder} admin={admin} id={id} />
+      <OrderViewContent filteredOrder={filteredOrder} admin={admin} id={id} />
     </>
   );
 }
