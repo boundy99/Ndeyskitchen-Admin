@@ -1,11 +1,11 @@
 @import './resets'
 @import './utilities'
 @import './login'
-@import './dashboard'
 @import './navbar'
 @import './earnings'
 @import './orders'
 @import './order-view-navbar'
+@import './order-view-content'
 
 body, html
     background-color: $white
@@ -18,3 +18,7 @@ body, html
 main
     @include flexColumn
     align-items: center
+
+.loader-container
+    @include flexColumn
+    @include allCentered

@@ -1,6 +1,7 @@
 .order-view-navbar-container
     @include flexRow
     @include allCentered
+    background-color: $white
     position: sticky
     top: 0
     right: 0
@@ -28,15 +29,13 @@
         position: absolute
         left: $margin-gap
 
-    .receipts-btn-container button
-
     .receipts-btn-container
         @include flexRow
         position: absolute
         right: $margin-gap
         gap: $list-gap
 
-    // Media Queries
+// Media Queries
 
 @media (max-width: 1000px)
     $margin-gap: 50px

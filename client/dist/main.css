@@ -553,6 +553,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fdfefe;
   position: sticky;
   top: 0;
   right: 0;
@@ -617,6 +618,146 @@
     gap: 12px;
   }
 }
+.order-view-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.order-view-content-container .order-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+}
+.order-view-content-container .order-information h3 {
+  color: #371821;
+  font-weight: normal;
+}
+.order-view-content-container .order-information p {
+  font-size: 17px;
+  color: #371821;
+}
+.order-view-content-container .order-information span {
+  color: #DC952F;
+}
+.order-view-content-container .items-card-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 10px;
+}
+.order-view-content-container .items-card-container .item-card {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  border: 1px solid #DC952F;
+  gap: 10px;
+}
+.order-view-content-container .items-card-container .item-card img {
+  width: 130px;
+  height: 150px;
+}
+.order-view-content-container .items-card-container .item-card .item-information {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.order-view-content-container .items-card-container .item-card .item-information p {
+  color: #371821;
+}
+.order-view-content-container button {
+  background-color: #fdfefe;
+  color: #371821;
+  font-size: 20px;
+  margin-bottom: 50px;
+  padding: 8px 5px;
+  border: 1px solid #371821;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.order-view-content-container button:hover {
+  cursor: pointer;
+  color: #DC952F;
+  border-color: #DC952F;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+  .order-view-content-container {
+    gap: 10px;
+  }
+  .order-view-content-container .order-information {
+    padding-top: 10px;
+    gap: 10px;
+  }
+  .order-view-content-container .order-information h3 {
+    font-size: 17.5px;
+  }
+  .order-view-content-container .order-information p, .order-view-content-container .order-information span {
+    font-size: 16.5px;
+  }
+  .order-view-content-container .items-card-container {
+    margin: 20px 0;
+    gap: 10px;
+  }
+  .order-view-content-container .items-card-container .item-card {
+    width: 440px;
+    gap: 10px;
+  }
+  .order-view-content-container .items-card-container .item-card img {
+    width: 130px;
+    height: 130px;
+  }
+  .order-view-content-container .items-card-container .item-card .item-information {
+    gap: 10px;
+  }
+  .order-view-content-container .items-card-container .item-card .item-information p {
+    font-size: 15px;
+  }
+  .order-view-content-container button {
+    font-size: 18.5px;
+  }
+}
+@media (max-width: 650px) {
+  .order-view-content-container {
+    gap: 8px;
+  }
+  .order-view-content-container .order-information {
+    padding-top: 8px;
+    gap: 8px;
+  }
+  .order-view-content-container .order-information h3 {
+    font-size: 16.5px;
+  }
+  .order-view-content-container .order-information p, .order-view-content-container .order-information span {
+    font-size: 15.7px;
+  }
+  .order-view-content-container .items-card-container {
+    margin: 20px 0;
+    gap: 8px;
+  }
+  .order-view-content-container .items-card-container .item-card {
+    width: 350px;
+    gap: 8px;
+  }
+  .order-view-content-container .items-card-container .item-card img {
+    width: 130px;
+    height: 130px;
+  }
+  .order-view-content-container .items-card-container .item-card .item-information {
+    gap: 8px;
+  }
+  .order-view-content-container .items-card-container .item-card .item-information p {
+    font-size: 14px;
+  }
+  .order-view-content-container button {
+    font-size: 16px;
+  }
+}
 body, html {
   background-color: #fdfefe;
   max-width: 100%;
@@ -629,5 +770,12 @@ body, html {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }

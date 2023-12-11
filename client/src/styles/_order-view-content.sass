@@ -1,0 +1,141 @@
+$order-view-container-gap: 10px
+
+.order-view-content-container
+    @include flexColumn
+
+    align-items: center
+    gap: $order-view-container-gap
+
+    .order-information
+        @include flexColumn
+        @include allCentered
+        padding-top: $order-view-container-gap
+        gap: $order-view-container-gap
+
+        h3
+            color: $primary
+            font-weight: normal
+
+        p
+            font-size: 17px
+            color: $primary
+
+        span
+            color: $secondary
+
+    .items-card-container
+        @include flexColumn
+        margin: 20px 0
+        gap: $order-view-container-gap
+
+        .item-card
+            @include flexRow
+            align-items: center
+            width: 500px
+            border: 1px solid $secondary
+            gap: $order-view-container-gap
+
+            img
+                width: 130px
+                height: 150px
+
+            .item-information
+                @include flexColumn
+
+                gap: $order-view-container-gap
+
+                p
+                    color: $primary
+
+    button
+        background-color: $white
+        color: $primary
+        font-size: 20px
+        margin-bottom: 50px
+        padding: 8px 5px
+        border: 1px solid $primary
+        border-radius: $radius
+        transition: transition(background-color)
+        transition: transition(color)
+
+        &:hover
+            cursor: pointer
+            color: $secondary
+            border-color: $secondary
+            transition: transition(color)
+
+// Media Queries
+
+@media (max-width: 1000px)
+    $order-view-container-gap: 10px
+
+    .order-view-content-container
+        gap: $order-view-container-gap
+
+        .order-information
+            padding-top: $order-view-container-gap
+            gap: $order-view-container-gap
+
+            h3
+                font-size: 17.5px
+
+            p, span
+                font-size: 16.5px
+
+        .items-card-container
+            margin: 20px 0
+            gap: $order-view-container-gap
+
+            .item-card
+                width: 440px
+                gap: $order-view-container-gap
+
+                img
+                    width: 130px
+                    height: 130px
+
+                .item-information
+
+                    gap: $order-view-container-gap
+
+                    p
+                        font-size: 15px
+        button
+            font-size: 18.5px
+
+@media (max-width: 650px)
+    $order-view-container-gap: 8px
+
+    .order-view-content-container
+        gap: $order-view-container-gap
+
+        .order-information
+            padding-top: $order-view-container-gap
+            gap: $order-view-container-gap
+
+            h3
+                font-size: 16.5px
+
+            p, span
+                font-size: 15.7px
+
+        .items-card-container
+            margin: 20px 0
+            gap: $order-view-container-gap
+
+            .item-card
+                width: 350px
+                gap: $order-view-container-gap
+
+                img
+                    width: 130px
+                    height: 130px
+
+                .item-information
+
+                    gap: $order-view-container-gap
+
+                    p
+                        font-size: 14px
+        button
+            font-size: 16px
