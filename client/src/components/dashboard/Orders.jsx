@@ -16,7 +16,7 @@ export default function Orders() {
   };
 
   useEffect(() => {
-    const filtered = orders.filter(
+    const filtered = orders?.filter(
       order =>
         order.status === button &&
         (search === '' || order.orderNumber.includes(search))
