@@ -68,7 +68,12 @@ export default function OrderViewContent({ filteredOrder, id }) {
 
             <div className="item-information">
               <p>{item.name}</p>
-              {item.flavor !== '' && <p>Flavor or topping: {item.flavor}</p>}
+              {item.flavor !== '' && (
+                <p>
+                  {item.filter === 'Cakes' ? 'Flavor' : 'Protein'}:{' '}
+                  {item.flavor}
+                </p>
+              )}
 
               <p>Size: {item.size}</p>
               <p>Quantity x price: {`${item.quantity} x ${item.price}`} </p>
