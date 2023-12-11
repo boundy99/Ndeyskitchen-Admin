@@ -95,7 +95,7 @@ function buildReceipt(order, items, date, time, dataCallback, endDataCallback) {
   const imagePath = path.join(__dirname, '../image/ndeys-kitchen.png');
   const size = 50;
 
-  const height = 300 + 20 * items.length;
+  const height = 305 + 20 * items.length;
 
   const receipt = new PDFDocument({
     size: [250, height],
@@ -170,6 +170,10 @@ function buildReceipt(order, items, date, time, dataCallback, endDataCallback) {
     .moveDown(sectionGap * 2)
     .text('Total', { continued: true, align: 'left' })
     .text(`D ${order.total}`, { align: 'right' });
+
+  receipt
+    .moveDown(sectionGap * 2)
+    .text(`Payment Method:  ${order.paymentMethod}`);
 
   receipt
     .moveDown(sectionGap * 3)
