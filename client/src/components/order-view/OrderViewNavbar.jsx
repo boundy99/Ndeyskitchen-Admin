@@ -5,11 +5,12 @@ import Headroom from 'react-headroom';
 export default function OrderViewNabar({ filteredOrder, admin, id }) {
   const navigate = useNavigate();
 
-  const hasCakeItems = filteredOrder.some(order =>
-    order.items.some(item => item.filter === 'Cakes')
+  const hasCakeItems = filteredOrder[0].items.find(
+    item => item.filter === 'Cakes'
   );
-  const hasNonCakeItems = filteredOrder.some(order =>
-    order.items.some(item => item.filter !== 'Cakes')
+
+  const hasNonCakeItems = filteredOrder[0].items.find(
+    item => item.filter !== 'Cakes'
   );
 
   async function handleReceiptClick(event, type) {
