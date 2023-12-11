@@ -11,7 +11,7 @@ export default function OrderView() {
   const { admin } = useAuthContext();
   const { orders, isLoading } = useFetchedOrders();
 
-  const filteredOrder = orders?.filter(order => order._id === id);
+  const filteredOrder = orders.filter(order => order._id === id);
 
   return isLoading ? (
     <Loader />
