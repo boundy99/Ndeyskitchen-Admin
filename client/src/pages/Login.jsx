@@ -74,6 +74,7 @@ export default function Login() {
           name="username"
           id="username"
           type="text"
+          autoCapitalize="none"
           onChange={handleChange}
           onClick={() => setErrors({ ...errors, usernameError: false })}
           required
