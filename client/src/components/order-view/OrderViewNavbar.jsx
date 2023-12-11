@@ -24,9 +24,7 @@ export default function OrderViewNabar({ filteredOrder, admin, id }) {
         },
       });
 
-      if (!response.ok) {
-        return;
-      }
+      if (!response.ok) return;
 
       const receiptBlob = await response.blob();
       const receipt = new Blob([receiptBlob], { type: 'application/pdf' });
