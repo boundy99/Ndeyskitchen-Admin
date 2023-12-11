@@ -16,8 +16,5 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    build: {
-      assetsInclude: ['**/*.css'],
-    },
   };
 });
