@@ -10,4 +10,6 @@ router.post(
   orderController.getOrderReceipt
 );
 
+router.post('/update-order-status', orderController.updateOrderStatus);
+
 module.exports = router;

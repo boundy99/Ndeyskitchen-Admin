@@ -1,10 +1,14 @@
 const Order = require('../database/models/orderModel');
 const PDFDocument = require('pdfkit');
-const fs = require('fs');
-const path = require('path');
-const sendEmail = require('../scripts/sendEmail');
 
-const { ORDERS_NOT_FOUND, ORDER_NOT_FOUND } = require('../messages');
+const path = require('path');
+
+const {
+  ORDERS_NOT_FOUND,
+  ORDER_NOT_FOUND,
+  ORDER_STATUS_COULD_NOT_BE_UPDATED,
+  ORDER_STATUS_UPDATED,
+} = require('../messages');
 
 async function getOrders(req, res) {
   try {
@@ -15,6 +19,27 @@ async function getOrders(req, res) {
     return res.status(200).json(orders);
   } catch (err) {
     return res.status(500).json({ message: err });
+  }
+}
+
+async function updateOrderStatus(req, res) {
+  const { id } = req.body;
+  console.log(id);
+
+  try {
+    const order = await Order.updateOne(
+      { _id: id },
+      { status: 'Complete' }
+    ).lean();
+
+    if (!order)
+      return res
+        .status(404)
+        .json({ message: ORDER_STATUS_COULD_NOT_BE_UPDATED });
+
+    return res.status(200).json({ message: ORDER_STATUS_UPDATED });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
   }
 }
 
@@ -153,4 +178,4 @@ function buildReceipt(order, items, date, time, dataCallback, endDataCallback) {
   receipt.end();
 }
 
-module.exports = { getOrders, getOrderReceipt };
+module.exports = { getOrders, getOrderReceipt, updateOrderStatus };
