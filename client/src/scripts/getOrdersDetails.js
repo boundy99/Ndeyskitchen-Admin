@@ -6,6 +6,14 @@ export default function getOrdersDetails() {
 
   const { currentDate, currentMonth, year } = getDate;
 
+  if (!Array.isArray(orders)) {
+    return {
+      currentDayEarnings: 0,
+      currentMonthEarnings: 0,
+      currentYearEarnings: 0,
+    };
+  }
+
   const ordersForCurrentDay = orders.filter(order => {
     const orderDate = new Date(order.createdAt);
 
