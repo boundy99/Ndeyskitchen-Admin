@@ -24,7 +24,6 @@ async function getOrders(req, res) {
 
 async function updateOrderStatus(req, res) {
   const { id } = req.body;
-  console.log(id);
 
   try {
     const order = await Order.updateOne(
